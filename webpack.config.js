@@ -1,3 +1,5 @@
+import CompressionPlugin from 'compression-webpack-plugin';
+
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
@@ -6,6 +8,22 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const pathJoin = (src) => {
     path.join(__dirname, src);
 };
+
+const isDev = process.env.NODE_ENV === 'development';
+const plugins = [
+    new VueLoaderPlugin(),
+    new HtmlWebpackPlugin({
+        template: './public/index.html',
+    }),
+];
+if (!isDev) {
+    // 生产
+    plugins.push(new CleanWebpackPlugin());
+    plugins.push(new CompressionPlugin({
+        test: /\.(js|ts|css)$/i,
+        threshold: 1024 * 20,
+    }));
+}
 
 module.exports = {
     entry: pathJoin('./src/index.js'),
@@ -38,11 +56,5 @@ module.exports = {
             },
         ],
     },
-    plugins: [
-        new CleanWebpackPlugin(),
-        new VueLoaderPlugin(),
-        new HtmlWebpackPlugin({
-            template: './public/index.html',
-        }),
-    ],
+    plugins,
 };

@@ -1,11 +1,12 @@
-module.exports = function(api) {
+// eslint-disable-next-line func-names
+module.exports = function (api) {
     api.cache(true);
 
-    const presets = ["@babel/preset-env"];
+    const presets = ['@babel/preset-env'];
     const plugins = [];
-    
+
     return {
         presets,
-        plugins
-    }
-}
+        plugins,
+    };
+};

@@ -18,5 +18,6 @@ module.exports = {
         semi: ['error', 'always'],
         quotes: ['error', 'single'],
         indent: ['error', 4],
+        'no-console': 'off',
     },
 };
