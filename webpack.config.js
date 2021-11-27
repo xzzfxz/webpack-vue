@@ -1,5 +1,4 @@
-import CompressionPlugin from 'compression-webpack-plugin';
-
+const CompressionPlugin = require('compression-webpack-plugin');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
@@ -33,6 +32,12 @@ module.exports = {
         path: `${__dirname}/dist`,
     },
     devServer: {},
+    resolve: {
+        extensions: ['.js', '.vue'],
+        alias: {
+            '@': path.resolve(__dirname, '/src'),
+        },
+    },
     module: {
         rules: [
             {

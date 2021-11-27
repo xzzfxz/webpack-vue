@@ -1,5 +1,7 @@
 <template>
-    <div class="test">name111222111</div>
+    <div>
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
@@ -7,11 +9,7 @@ export default {
     data() {
         return {};
     },
-    created() {
-        const a = 1;
-        const b = 2;
-        const c = 'test';
-    },
+    created() {},
 };
 </script>
 

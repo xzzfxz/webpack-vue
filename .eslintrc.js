@@ -14,10 +14,24 @@ module.exports = {
     plugins: [
         'vue',
     ],
+    settings: {
+        'import/resolver': {
+            alias: {
+                map: [
+                    ['@', './src'],
+                ],
+            },
+        },
+    },
     rules: {
         semi: ['error', 'always'],
         quotes: ['error', 'single'],
         indent: ['error', 4],
         'no-console': 'off',
+        'vue/multi-word-component-names': 'off',
+        'import/extensions': ['error', 'always', {
+            js: 'never',
+            vue: 'never',
+        }],
     },
 };
