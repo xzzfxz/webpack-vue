@@ -10,6 +10,11 @@ const routes = [
         name: 'index',
         component: Index,
     },
+    {
+        path: '/swiper',
+        name: 'swiper',
+        component: () => import('@/views/swiper'),
+    },
 ];
 
 const router = new Router({

@@ -5,7 +5,8 @@ module.exports = {
     },
     extends: [
         'plugin:vue/essential',
-        'airbnb-base',
+        // 'airbnb-base',
+
     ],
     parserOptions: {
         ecmaVersion: 13,
@@ -16,12 +17,19 @@ module.exports = {
     ],
     settings: {
         'import/resolver': {
-            alias: {
-                map: [
-                    ['@', './src'],
-                ],
-            },
+            // alias: {
+            //     map: [
+            //         ['@', './src'],
+            //     ],
+            // },
+            // node: {
+            //     extensions: ['.js', '.vue'],
+            // },
         },
+        'import/extensions': [
+            '.js',
+            '.jsx',
+        ],
     },
     rules: {
         semi: ['error', 'always'],
@@ -29,9 +37,9 @@ module.exports = {
         indent: ['error', 4],
         'no-console': 'off',
         'vue/multi-word-component-names': 'off',
-        'import/extensions': ['error', 'always', {
-            js: 'never',
-            vue: 'never',
-        }],
+        // 'import/extensions': ['error', 'always', {
+        //     js: 'never',
+        //     vue: 'never',
+        // }],
     },
 };
