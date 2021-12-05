@@ -1,5 +1,7 @@
 <template>
-    <div>这是首页</div>
+    <div>
+        <router-link to="/swiper">swiper</router-link>
+    </div>
 </template>
 
 <script>

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = {
     env: {
         browser: true,
@@ -6,7 +7,7 @@ module.exports = {
     extends: [
         'plugin:vue/essential',
         // 'airbnb-base',
-
+        'eslint:recommended'
     ],
     parserOptions: {
         ecmaVersion: 13,

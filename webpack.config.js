@@ -31,7 +31,9 @@ module.exports = {
         filename: '[name].js',
         path: `${__dirname}/dist`,
     },
-    devServer: {},
+    devServer: {
+        historyApiFallback: true,
+    },
     resolve: {
         extensions: ['.js', '.vue'],
         alias: {
