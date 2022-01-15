@@ -15,6 +15,11 @@ const routes = [
         name: 'swiper',
         component: () => import('@/views/swiper'),
     },
+    {
+        path: '/imageView',
+        name: 'imageView',
+        component: () => import('@/views/imageView'),
+    },
 ];
 
 const router = new Router({
